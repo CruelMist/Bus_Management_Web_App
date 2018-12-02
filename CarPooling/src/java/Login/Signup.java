@@ -39,7 +39,9 @@ public class Signup extends HttpServlet {
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3307/carpool?useSSL=false","root","devil114");
             String query1="insert into userlog values(?,?,?,?)";
+            String query2="insert into userprof(fname,lname,email) values(?,?,?)";
             PreparedStatement pstmt=conn.prepareStatement(query1);
+            PreparedStatement pstmt2=conn.prepareStatement(query2);
             String n=request.getParameter("fname");
             String nl=request.getParameter("lname");
             String u=request.getParameter("email");
@@ -48,16 +50,19 @@ public class Signup extends HttpServlet {
             pstmt.setString(2,nl);
             pstmt.setString(3,u);
             pstmt.setString(4,p);
+            pstmt2.setString(1,n);
+            pstmt2.setString(2,nl);
+            pstmt2.setString(3,u);
             int rs=pstmt.executeUpdate();
             if(rs>=1)
             {
-                //System.out.print(rs);
+                pstmt2.executeUpdate();
                 HttpSession session=request.getSession();
                 session.setAttribute("user",u);
-            // Set expiry time of the session to 30mins
                 session.setMaxInactiveInterval(30*60);
                 String url=response.encodeRedirectURL("SignupSuccess");
-                response.sendRedirect(url);
+                String url1=response.encodeRedirectURL("login.html");
+                response.sendRedirect(url1);
             }
             else
             {

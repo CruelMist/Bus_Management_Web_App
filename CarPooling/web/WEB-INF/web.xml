@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
     <servlet>
         <servlet-name>Signup</servlet-name>
         <servlet-class>Login.Signup</servlet-class>
@@ -20,6 +23,22 @@
         <servlet-name>SignupSuccess</servlet-name>
         <servlet-class>AdvanceServlets.SignupSuccess</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Profile</servlet-name>
+        <servlet-class>AdvanceServlets.Profile</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Host</servlet-name>
+        <servlet-class>AdvanceServlets.Host</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Seats</servlet-name>
+        <servlet-class>AdvanceServlets.Seats</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>End</servlet-name>
+        <servlet-class>AdvanceServlets.End</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>Signup</servlet-name>
         <url-pattern>/Signup</url-pattern>
@@ -39,6 +58,22 @@
     <servlet-mapping>
         <servlet-name>SignupSuccess</servlet-name>
         <url-pattern>/SignupSuccess</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Profile</servlet-name>
+        <url-pattern>/Profile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Host</servlet-name>
+        <url-pattern>/Host</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Seats</servlet-name>
+        <url-pattern>/Seats</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>End</servlet-name>
+        <url-pattern>/End</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

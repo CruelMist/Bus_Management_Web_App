@@ -16,7 +16,7 @@ public class DbConnect {
         try
         {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3307/mydb","root","devil114");
+            Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3307/carpool","root","devil114");
             Statement stmt=conn.createStatement();
             /*Similarly, Statement is interface so it can't have an object, so createStatement()
             goes to its class where the object is created. Obviously the same class implements Statement.

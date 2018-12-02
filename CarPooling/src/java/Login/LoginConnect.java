@@ -44,12 +44,11 @@ public class LoginConnect extends HttpServlet {
             ResultSet rs=pstmt.executeQuery();
             if(rs.last()==true)
             {
-                //System.out.print(rs);
                 HttpSession session=request.getSession();
                 session.setAttribute("user",u);
-            // Set expiry time of the session to 30mins
                 session.setMaxInactiveInterval(30*60);
-                String url=response.encodeRedirectURL("LoginSuccess");
+                String url1=response.encodeRedirectURL("LoginSuccess");
+                String url=response.encodeRedirectURL("index.jsp");
                 response.sendRedirect(url);
             }
             else
