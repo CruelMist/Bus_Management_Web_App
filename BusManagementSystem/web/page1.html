@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- <link rel="stylesheet" href="bootstrap/css/bootstrap.css"> -->
+        <script src="jquery-3.3.1.js"></script>
+        <link rel="stylesheet" href="animate.css">
+        <!-- <link rel="stylesheet" href="styles1.css"> -->
+        <style media="screen">
+            body
+            {
+                background: rgb(170, 24, 24);
+                margin: 0;
+            }
+            .container
+            {
+                height:95vh;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                background-size: cover;
+                overflow-x: hidden;
+                /* display:none; */
+            }
+            .box
+            {
+                width:20%;
+                /* height:50%; */
+                display:flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: center;
+                background-color: black;
+                padding:10px;
+                border-radius: 4%;
+            }
+            form
+            {
+                width:100%;
+                display:"flex";
+                flex-wrap: "wrap";
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                padding:10px;
+            }
+            button{
+                width:50%;
+                padding:10px;
+                display: block;
+                border: none;
+                border-radius: 5%;
+                color:white;
+                margin: 15% auto 10% auto;
+                background-color: rgb(170, 33, 33);
+            }
+            button:hover
+            {
+                background-color: rgb(216, 8, 8);
+            }
+            .type
+            {
+                /* margin:10% 0; */
+                color:white;
+                font-size: 80%;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .header
+            {
+                top:0px;
+                position: absolute;
+                height:5%;
+                width:100%;
+                background-color: black;
+            }
+            .footer
+            {
+                bottom:0px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 2.8vh;
+                font-family: Arial, Helvetica, sans-serif;
+                position: absolute;
+                height:5%;
+                width:100%;
+                color: white;
+                background-color: black;
+            }
+            #mail,#pass,#select
+            {
+                /* margin:10% 0 0 0; */
+                width:70%;
+                padding:10px;
+                display: block;
+                background-color:rgb(177, 170, 170);
+                border: none;
+                border-radius: 4%;
+            }
+            .logo
+            {
+                width: 80%;
+                padding:5%;
+                margin: auto;
+            }
+            @media(max-width:768px)
+            {
+                .box{
+                    width:30%;
+                }
+            }
+            @media(max-width:425px)
+            {
+                .box{
+                    width:40%;
+                }
+            }
+            @media(max-width:320px)
+            {
+                .box{
+                    width:50%;
+                }
+            }
+            a{
+                text-decoration: none;
+                color:white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header"></div>
+        <div class="container" id="con">
+            <div class="box" id="#box">
+                <img class="logo" src="cu_logo3.png">
+                <form name="login" onsubmit="return validateForm()" action="LogServlet" method="POST">
+                    <p class="type">Enter Email:</p>
+                    <input id="mail" name="mail" type="text" placeholder="Email">
+                    <p class="type">Enter Password:</p>
+                    <input id="pass" name="pass" type="password" placeholder="Password">
+                    <p class="type">Account Type:</p>
+                    <select id="select" name="type" required>
+                        <option value="student" selected>Student</option>
+                        <option value="faculty">Faculty</option>
+                        <option value="staff">Staff</option>
+                        <option value="admin">Admin</option>
+                    </select>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer">Copyright © Chitkara University 2019</div>
+        <script>
+            function validateForm() {
+            var x = document.forms["login"]["mail"].value;
+            var y= document.forms["login"]["pass"].value;
+            if (!(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(login.mail.value))) {
+            alert("Please enter valid email");
+            return false;
+            }
+            else if (y == "") {
+            alert("Please enter valid password");
+            return false;
+            }
+            else{
+            return true;
+            }
+            }
+        </script>
+    </body>
+</html>

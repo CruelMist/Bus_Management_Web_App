@@ -1,0 +1,140 @@
+body{
+    background-image:url("ccbe1278b0c3f0b78e7eb54366ae62b2.png");
+    background-color : black;
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.container{
+    border-top: 3px dotted white;
+    border-bottom: 3px dotted white;
+    border-right: 2px solid white;
+    border-left: 2px solid white;
+    box-shadow: inset 0 -1px 0 0 white, inset 0 1px 0 0 white, 0 1px 0 0 white, 0 -1px 0 0 white;
+    /* background: rgb(15, 15, 15); */
+    height:82.7vh;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    flex-direction: row;
+    /* position: absolute; */
+}
+.footer
+{
+    margin:2px 0 0 0;
+    /* bottom:0px; */
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* justify-content: space-between; */
+    align-items: center;
+    justify-content: center;
+    font-size: 90%;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    height:5%;
+    width:100%;
+    color: white;
+    background-color: black;
+}
+.nav{
+    border:3px solid white;
+    width:22%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background:rgb(170, 24, 24);
+    /* width:30%; */
+    height:44%;
+    margin:1%;
+}
+.flip-card{
+    perspective: 1000px;
+    width:100%;
+    height:100%;
+}
+.flip-card-inner{
+    position: relative;
+    transition: transform 1s;
+    transition-delay: 0.5s;
+    width:100%;
+    height:100%;
+    transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+}
+.flip-card-back {
+    background-color: transparent;
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+.nav button{
+    margin:1%;
+    padding:3%;
+    background: none;
+    border:2px solid white;
+    border-radius: 4%;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:100%;
+    transition: all 0.2s;
+}
+/* .nav button:hover{
+    background:white;
+    color:black;
+} */
+.si-glyph *{
+    fill: white;
+}
+svg{
+    margin: 0 0 1% 0;
+    width:75%;
+    height:75%;
+    padding: 2%;
+}
+.con-bar{
+    display: flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+}
+.con-text{
+    color: white;
+    font-size:2.8vh;
+}
+.contact{
+    fill:white;
+    width:5%;
+    height:5%;
+}
+.con-bar button{
+    margin:1%;
+    padding:1%;
+    width:20%;
+    background: none;
+    border:2px solid white;
+    border-radius: 4%;
+    color:white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:100%;
+    transition: all 0.2s;
+}
+.con-bar button:hover{
+    background:white;
+    color:black;
+}
+#copy{
+    margin:0;
+    padding:0;
+    
+}
